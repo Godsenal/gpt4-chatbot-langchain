@@ -38,3 +38,12 @@ next-env.d.ts
 
 #Notion_db
 /Notion_DB
+
+## yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
