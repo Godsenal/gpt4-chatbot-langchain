@@ -24,10 +24,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dqbd/tiktoken@npm:^1.0.4":
-  version: 1.0.6
-  resolution: "@dqbd/tiktoken@npm:1.0.6"
-  checksum: da37eeaba12f3e34a1c9bd5a368e3802a862022e13cd2c94aff73429318fd8363335fd656500a480211cfc3f897bb31b624a5aaee3b992674def61be5a103272
+"@dqbd/tiktoken@npm:^1.0.7":
+  version: 1.0.7
+  resolution: "@dqbd/tiktoken@npm:1.0.7"
+  checksum: 81049797dcffa101c57b68a78be19b11958edf6e6cfffab7ccd3ec2e5290e3b27bc25f1060a1c34e1cb94f22e0f46d9aafa925d383fb4559738b644aa01c0fb1
   languageName: node
   linkType: hard
 
@@ -956,6 +956,13 @@ __metadata:
   dependencies:
     color-convert: ^2.0.1
   checksum: 513b44c3b2105dd14cc42a19271e80f386466c4be574bccf60b627432f9198571ebf4ab1e4c3ba17347658f4ee1711c163d574248c0c1cdc2d5917a0ad582ec4
+  languageName: node
+  linkType: hard
+
+"ansi-styles@npm:^5.0.0":
+  version: 5.2.0
+  resolution: "ansi-styles@npm:5.2.0"
+  checksum: d7f4e97ce0623aea6bc0d90dcd28881ee04cba06c570b97fd3391bd7a268eedfd9d5e2dd4fdcbdd82b8105df5faf6f24aaedc08eaf3da898e702db5948f63469
   languageName: node
   linkType: hard
 
@@ -2549,7 +2556,7 @@ __metadata:
     dotenv: ^16.0.3
     eslint: 8.35.0
     eslint-config-next: 13.2.3
-    langchain: 0.0.55
+    langchain: ^0.0.75
     lucide-react: ^0.125.0
     next: 13.2.3
     pdf-parse: 1.1.1
@@ -3134,12 +3141,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"langchain@npm:0.0.55":
-  version: 0.0.55
-  resolution: "langchain@npm:0.0.55"
+"langchain@npm:^0.0.75":
+  version: 0.0.75
+  resolution: "langchain@npm:0.0.75"
   dependencies:
     "@anthropic-ai/sdk": ^0.4.3
-    "@dqbd/tiktoken": ^1.0.4
+    "@dqbd/tiktoken": ^1.0.7
+    ansi-styles: ^5.0.0
     binary-extensions: ^2.2.0
     browser-or-node: ^2.1.1
     expr-eval: ^2.0.2
@@ -3153,15 +3161,24 @@ __metadata:
     uuid: ^9.0.0
     yaml: ^2.2.1
     zod: ^3.21.4
+    zod-to-json-schema: ^3.20.4
   peerDependencies:
+    "@aws-sdk/client-dynamodb": ^3.310.0
+    "@aws-sdk/client-lambda": ^3.310.0
     "@aws-sdk/client-s3": ^3.310.0
+    "@clickhouse/client": ^0.0.14
     "@getmetal/metal-sdk": "*"
     "@huggingface/inference": ^1.5.1
+    "@opensearch-project/opensearch": "*"
     "@pinecone-database/pinecone": "*"
     "@supabase/supabase-js": ^2.10.0
+    "@tensorflow-models/universal-sentence-encoder": "*"
+    "@tensorflow/tfjs-converter": "*"
+    "@tensorflow/tfjs-core": "*"
     "@zilliz/milvus2-sdk-node": ^2.2.0
+    axios: "*"
     cheerio: ^1.0.0-rc.12
-    chromadb: ^1.3.0
+    chromadb: ^1.4.0
     cohere-ai: ^5.0.2
     d3-dsv: ^2.0.0
     epub2: ^3.0.1
@@ -3169,25 +3186,42 @@ __metadata:
     html-to-text: ^9.0.5
     mammoth: "*"
     mongodb: ^5.2.0
-    pdfjs-dist: ^3.4.120
+    pdf-parse: 1.1.1
     playwright: ^1.32.1
     puppeteer: ^19.7.2
     redis: ^4.6.4
     replicate: ^0.9.0
     srt-parser-2: ^1.2.2
     typeorm: ^0.3.12
+    weaviate-ts-client: ^1.0.0
   peerDependenciesMeta:
+    "@aws-sdk/client-dynamodb":
+      optional: true
+    "@aws-sdk/client-lambda":
+      optional: true
     "@aws-sdk/client-s3":
+      optional: true
+    "@clickhouse/client":
       optional: true
     "@getmetal/metal-sdk":
       optional: true
     "@huggingface/inference":
       optional: true
+    "@opensearch-project/opensearch":
+      optional: true
     "@pinecone-database/pinecone":
       optional: true
     "@supabase/supabase-js":
       optional: true
+    "@tensorflow-models/universal-sentence-encoder":
+      optional: true
+    "@tensorflow/tfjs-converter":
+      optional: true
+    "@tensorflow/tfjs-core":
+      optional: true
     "@zilliz/milvus2-sdk-node":
+      optional: true
+    axios:
       optional: true
     cheerio:
       optional: true
@@ -3207,7 +3241,7 @@ __metadata:
       optional: true
     mongodb:
       optional: true
-    pdfjs-dist:
+    pdf-parse:
       optional: true
     playwright:
       optional: true
@@ -3221,7 +3255,9 @@ __metadata:
       optional: true
     typeorm:
       optional: true
-  checksum: ac5df9b2629a18efd0dc05bd4ccfb2e2b759256b86d55586b2acb33bc3ea44fba092753916777ccdb06e618c913b80be4189df79b2daad820acd373f323a1b5b
+    weaviate-ts-client:
+      optional: true
+  checksum: 616dbba9849dceebf6bb481fdf03184b3a2cc8d9179fb7d199649a6f9cca5afdcbbdaf12ce204f70d8c20bd524e49912bbc21afbd361021c9760fa1f0837ac78
   languageName: node
   linkType: hard
 
@@ -5621,6 +5657,15 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
+  languageName: node
+  linkType: hard
+
+"zod-to-json-schema@npm:^3.20.4":
+  version: 3.21.1
+  resolution: "zod-to-json-schema@npm:3.21.1"
+  peerDependencies:
+    zod: ^3.21.4
+  checksum: 70a00a0cb48f855962b6fef3191ac6c36bd1d809a343b22142390374aae511e7adfd8906d7d8ace6d6ad9fd646e29c22fdf3cb220c751f37b071efb2b21a512b
   languageName: node
   linkType: hard
 
